@@ -1,0 +1,11 @@
+name: gibberish
+channels:
+  - nodefaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - openai
+  - pandas
+  - pyyaml
+  - python-dotenv
+
