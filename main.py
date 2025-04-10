@@ -78,7 +78,7 @@ def get_client(singleton: bool = True):
 
 
 def load_data(fn: str) -> List[str]:
-    c = pandas.read_csv(fn)
+    c = pandas.read_csv(fn, compression="bz2")
     l = c['text'].tolist()
     return l
 
@@ -146,7 +146,7 @@ def run():
         futures.append(f)
     logger.info(f"All {_threads * _iterations} job(s) are submitted...")
     wait(futures)
-    logger.info("All {_threads * _iterations} job(s) are done...")
+    logger.info(f"All {_threads * _iterations} job(s) are done...")
 
 
 if __name__ == "__main__":
